@@ -4,7 +4,8 @@
     <button (click)="createTodo()">+ new</button>
     <ul>
         <li 
-            *ngFor="let todo of todos;">
+            *ngFor="let todo of todos$|async;"
+            (click)="deleteTodo(todo.id)">
             {{ todo.content }}
         </li>
     </ul>
